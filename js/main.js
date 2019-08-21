@@ -40,8 +40,10 @@ var css1 = `/*
 }
 html{
  background: #eee;
+ 
 }
 #code{
+ background: #eee; 
  border: 1px solid #aaa;
  padding: 16px;
  font-size: 16px;
@@ -50,9 +52,11 @@ html{
 /* 我需要一点代码高亮 */
 .token.selector{ color: #690; }
 .token.property{ color: #905; }
-/* 加一个呼吸效果 */
-#code{
- animation: breath 0.5s infinite alternate-reverse;
+/* 加一个颜色渐变效果 */
+#code-wrapper{
+  background: linear-gradient(-45deg, #e73c7e, #AD424E, #008080, #ee7752);
+  background-size: 400% 400%;
+  animation: gradientBG 6s ease infinite;
 }
 /* 现在正式开始 */
 /* 我需要一张白纸 */
