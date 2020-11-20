@@ -13,7 +13,7 @@ function writeCode(prefix, code, fn) {
       window.clearInterval(id)
       fn && fn.call()
     }
-  }, 10)
+  }, 20)
 }
 function writeMarkdown(markdown, fn) {
   let domPaper = document.querySelector('#paper>.content')
@@ -30,42 +30,55 @@ function writeMarkdown(markdown, fn) {
 }
 
 var css1 = `/* 
-* 面试官你好，我是XXX
+* 面试官你好，我是Janice
 * 只用文字作做我介绍太单调了
 * 我就用代码来介绍吧
-* 首先准备一些样式
 */
+
+/* 首先给所有元素加上过渡效果 */
 *{
- transition: all 1s;
+  transition: all .5s;
 }
+/* 白色背景太单调了，来点背景 */
 html{
- background: #eee;
- 
+  background: rgb(0,43,54); color: rgb(222,222,222);
 }
+/* 文字离边框太近了 */
 #code{
- background: #eee; 
- border: 1px solid #aaa;
- padding: 16px;
- font-size: 16px;
- font-family: 'Microsoft YaHei';
+  padding: .5em;
+  color: rgb(222,222,222);
+  border: 1px solid;
+  margin: .5em;
+  overflow: auto;
+  width: 45vw; height: 90vh;
 }
 /* 我需要一点代码高亮 */
-.token.selector{ color: #690; }
-.token.property{ color: #905; }
-/* 加一个颜色渐变效果 */
-#code-wrapper{
-  background: linear-gradient(-45deg, #e73c7e, #AD424E, #008080, #ee7752);
-  background-size: 400% 400%;
-  animation: gradientBG 6s ease infinite;
+.token.selector{ color: rgb(133,153,0); }
+.token.property{ color: rgb(187,137,0); }
+.token.punctuation{ color: yellow; }
+.token.function{ color: rgb(42,161,152); }
+
+/* 加点 3D 效果呗 */
+html{
+  perspective: 1000px;
 }
+#code{
+  position: fixed; left: 0; top: 0;
+  -webkit-transition: none;
+  transition: none;
+  -webkit-transform: rotateY(10deg) translateZ(-100px);
+  transform: rotateY(10deg) translateZ(-100px);
+}
+
 /* 现在正式开始 */
 /* 我需要一张白纸 */
-#code-wrapper{
- width: 50%; left: 0; position: fixed; 
- height: 100%;
-}
-#paper > .content {
-display: block;
+#paper{
+  position: fixed; right: 0; top: 0;
+  border: 1px solid;
+  background: white;
+  width: 48vw; height: 90vh;
+  padding: .5em;  margin: .5em;
+  overflow: auto;
 }
 /* 于是我就可以在白纸上写字了，请看右边 */
 `
@@ -89,31 +102,6 @@ XXX 学校毕业
 1. XXX 轮播
 2. XXX 简历
 3. XXX 画板
-
-# 联系方式
-- QQ xxxxxxxx
-- Email xxxxxxxx
-- 手机 xxxxxxx
-
-# 联系方式
-- QQ xxxxxxxx
-- Email xxxxxxxx
-- 手机 xxxxxxx
-
-# 联系方式
-- QQ xxxxxxxx
-- Email xxxxxxxx
-- 手机 xxxxxxx
-
-# 联系方式
-- QQ xxxxxxxx
-- Email xxxxxxxx
-- 手机 xxxxxxx
-
-# 联系方式
-- QQ xxxxxxxx
-- Email xxxxxxxx
-- 手机 xxxxxxx
 
 # 联系方式
 - QQ xxxxxxxx

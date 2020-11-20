@@ -1,22 +1,17 @@
-* { margin: 0; padding: 0; box-sizing: border-box; }
-.token.selector,
-.token.property,
-.token.function { color: black; }
-#code-wrapper { height: 100vh; padding: 16px; display: flex;}
-#code { width: 100%; height: 100%; overflow: hidden; }
-#paper { padding: 16px; background: #666B7A; width: 50%; height: 100%; right: 0; position: fixed; display: flex; align-items: flex-start; }
-#paper > .content { padding: 16px; background: white; width: 100%; height: 100%; overflow: hidden; display: none; }
-#paper > .html { padding: 16px; background: white; width: 100%; height: 100%; overflow: auto; }
-@keyframes gradientBG {
-  
-	0% {
-		background-position: 0% 50%;
+*{margin: 0; padding: 0; }
+*{box-sizing: border-box;}
+*::before{box-sizing: border-box;}
+*::after{box-sizing: border-box;}* { margin: 0; padding: 0; box-sizing: border-box; }
+#paper{ padding: 16px; width: 50%; right: 0; position: fixed; display: flex; align-items: flex-start; color: black; }
+/* #paper > .content { padding: 16px; background: white; width: 100%; height: 100%; overflow: hidden; display: none; }
+#paper > .html { padding: 16px; background: white; width: 100%; height: 100%; overflow: auto; }  */
+#code{color: rgb(124, 124, 124);}
+#paper { animation: flip 2s; }
+@keyframes flip {
+	from {
+		opacity: 0;
 	}
-	50% {
-		background-position: 100% 50%;
+	to {
+		opacity: 1;
 	}
-	100% {
-		background-position: 0% 50%;
-	}
-	
 }
