@@ -13,20 +13,20 @@ function writeCode(prefix, code, fn) {
       window.clearInterval(id)
       fn && fn.call()
     }
-  }, 20)
+  }, 23)
 }
 function writeMarkdown(markdown, fn) {
-  let domPaper = document.querySelector('#paper>.content')
+  let domPaper = document.querySelector('#paper > .content')
   let n = 0
   let id = setInterval(() => {
-    domPaper.innerHTML = markdown.substring(0, n)
     n += 1
+    domPaper.innerHTML = markdown.substring(0, n)
     domPaper.scrollTop = domPaper.scrollHeight
     if (n >= markdown.length) {
       window.clearInterval(id)
       fn && fn.call()
     }
-  }, 10)
+  }, 9)
 }
 
 var css1 = `/* 
@@ -53,6 +53,7 @@ html{
   width: 45vw; height: 90vh;
 }
 /* 我需要一点代码高亮 */
+.token.comment{ color: rgb(222,222,222); }
 .token.selector{ color: rgb(133,153,0); }
 .token.property{ color: rgb(187,137,0); }
 .token.punctuation{ color: yellow; }
@@ -74,12 +75,14 @@ html{
 /* 我需要一张白纸 */
 #paper{
   position: fixed; right: 0; top: 0;
+}
+#paper>.content{
   border: 1px solid;
   background: white;
+  padding: .5em; margin: .5em;
   width: 48vw; height: 90vh;
-  padding: .5em;  margin: .5em;
   overflow: auto;
-}
+} 
 /* 于是我就可以在白纸上写字了，请看右边 */
 `
 var css2 = `
@@ -88,25 +91,96 @@ var css2 = `
  */
 `
 var md = `
-# 自我介绍
-我叫 XXX
-1990 年 1 月出生
-XXX 学校毕业
-自学前端半年
-希望应聘前端开发岗位
+# 张丹  
+女 | 25岁 | 前端开发工程师 | 深圳
 
-# 技能介绍
-熟悉 JavaScript CSS
+[我的博客](https://www.jianshu.com/u/56c6b2bd891d)，目前已有 <strong>45</strong> 篇技术文章
+
+[GitHub](https://github.com/JaniceZD)
+
+# 技能介绍  
+* 熟悉页面制作技巧，能编写具有 <strong>语义化</strong> 的页面，并将设计稿 <strong>完美还原</strong>
+* 熟悉 <strong>前后端分离</strong> 技术，包括 AJAX、跨域、前端路由、Cookie、Session 等
+* 熟练掌握 <strong>Vue全家桶</strong> 的使用，包括 VueCli、VueRouter、Vuex 等
+* 熟练掌握 <strong>React</strong>、Redux、React Router 等
+* 熟悉 <strong>ES6</strong>，包括 let / Promise / await / 析构赋值
+* 了解 <strong>TypeScript</strong> 的使用，了解 <strong>Webpack 的配置和优化</strong>
+* CET-4/6，能够阅读 <strong>英文</strong> 文档，善用Google，Stack Overflow
 
 # 项目介绍
-1. XXX 轮播
-2. XXX 简历
-3. XXX 画板
+<header class="header">
+  <h3>柠檬 UI（一款基于Vue的前端UI组件库）</h3>
+  <span>
+    <a href="https://github.com/JaniceZD/gulu-demo" target="_blank">源码链接</a>
+    <a href="https://janicezd.gitee.io/gulu-demo" target="_blank">项目预览</a>
+  </span>
+</header>
+该项目是参考 <strong>Element UI</strong>、<strong>Ant Design</strong> 等UI库思路制作的 UI 组件库。
+目前已支持包括按钮、Tabs标签页、Popover弹出框、Collapse折叠面板等多个常用组件。
 
-# 联系方式
-- QQ xxxxxxxx
-- Email xxxxxxxx
-- 手机 xxxxxxx
+<header>
+  <h3>番茄土豆闹钟</h3>
+  <span>
+    <a href="https://github.com/JaniceZD/potato-demo-test" target="_blank">源码链接</a>
+    <a href="https://janicezd.gitee.io/potato-demo-test" target="_blank">项目预览</a>
+  </span>
+</header>
+该项目使用 <strong>React、Redux、React-Router</strong> 等实现了仿番茄土豆的线上应用。
+提供登录注册、番茄闹钟计时、历史任务查看、数据统计等功能。
+
+<header>
+  <h3>小程序：番茄 TodoLsit</h3>
+  <span>
+    <a href="https://github.com/JaniceZD/tomato_mini_demo" target="_blank">源码链接</a>
+  </span>
+</header>
+一款根据 <strong>番茄工作法</strong> 概念而进行开发的 <strong>微信小程序</strong>。
+提供登录注册、历史Todo查看、完成任务记录、番茄钟计时以及番茄钟暂停再来一组的功能。
+
+<header>
+  <h3>动态画出皮卡丘</h3>
+  <span>
+    <a href="https://github.com/JaniceZD/pikachu-demo" target="_blank">源码链接</a>
+    <a href="https://janicezd.gitee.io/pikachu-demo" target="_blank">项目预览</a>
+  </span>
+</header>
+这是一个基于原生 <strong>JavaScript</strong> 和 <strong>CSS3</strong> 完成的项目。
+利用 <strong>JS动态写入HTML和CSS</strong>，模拟从零到一画出皮卡丘的过程。
+
+# 开源项目
+<header class="header">
+  <h3>vue技术栈实现cnode社区</h3>
+  <span>
+    <a href="https://github.com/JaniceZD/cnode-demo" target="_blank">源码链接</a>
+    <a href="https://janicezd.gitee.io/cnode-demo" target="_blank">项目预览</a>
+  </span>
+</header>
+这是一个基于 <strong>Vue</strong> 实现的仿 CNode 社区网站。
+主要功能包括帖子查看、用户信息查询、不同主题切换等。
+
+<header>
+  <h3>Canvas在线画板</h3>
+  <span>
+    <a href="https://github.com/JaniceZD/myCanvas" target="_blank">源码链接</a>
+    <a href="https://janicezd.gitee.io/mycanvas" target="_blank">项目预览</a>
+  </span>
+</header>
+这是一个基于原生JavaScript、<strong>HTML5</strong> 和 <strong>Canvas</strong> 完成的项目。
+提供了选择画笔粗细、颜色调整、橡皮擦擦除、一键清除等功能，并支持画作下载。
+
+# 教育经历
+
+2013年9月 ~ 2017年7月  吉林大学珠海学院  计算机科学与技术
+
+# 工作经历
+<header class="header">
+  <h3>惠州睿通文化传播有限公司</h3>
+  <h4>数据分析师</h4>
+  <span><time>2018年10月</time>~<time>2020年8月</time></span>
+</header>
+任职期间负责监控日常产品营销数据， 并结合业务和产品运营情况，撰写基于数据的周、月度分析
+报告，并提出项目改进方案等。
+                        
 `
 var css3 = `
 /*

@@ -1,12 +1,16 @@
 *{margin: 0; padding: 0; }
 *{box-sizing: border-box;}
 *::before{box-sizing: border-box;}
-*::after{box-sizing: border-box;}* { margin: 0; padding: 0; box-sizing: border-box; }
-#paper{ padding: 16px; width: 50%; right: 0; position: fixed; display: flex; align-items: flex-start; color: black; }
-/* #paper > .content { padding: 16px; background: white; width: 100%; height: 100%; overflow: hidden; display: none; }
-#paper > .html { padding: 16px; background: white; width: 100%; height: 100%; overflow: auto; }  */
+*::after{box-sizing: border-box;}
+#paper{ padding: .5em; width: 50%; right: 0; position: fixed; display: flex; align-items: flex-start; color: black; height: 100vh; }
+/* #paper > .content { padding: 16px; background: white; width: 100%; height: 100%; overflow: hidden; display: none; } */
+#paper > .html { padding: 16px; background: white; width: 100%; height: 90vh; overflow: auto;}  
+#paper > .html strong { color: #f60;}
+#paper > .html header { display: flex; justify-content: space-between; align-items: baseline; }
+#paper > .html .header { margin-top: -22px; }
+#paper > .html .header > h4 { margin-left: -5em; font-size: 16px; color: #666;}
 #code{color: rgb(124, 124, 124);}
-#paper { animation: flip 2s; }
+#paper { animation: flip 1s; }
 @keyframes flip {
 	from {
 		opacity: 0;
