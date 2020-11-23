@@ -117,6 +117,7 @@ var md = `
 </header>
 该项目是参考 <strong>Element UI</strong>、<strong>Ant Design</strong> 等UI库思路制作的 UI 组件库。
 目前已支持包括按钮、Tabs标签页、Popover弹出框、Collapse折叠面板等多个常用组件。
+并使用 VuePress 制作 <strong>官方文档</strong>，发布于npmjs.org。
 
 <header>
   <h3>番茄土豆闹钟</h3>
