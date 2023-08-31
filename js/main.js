@@ -170,7 +170,7 @@ var md = `
 <header class="header">
   <h3>深圳市进汇科技有限公司</h3>
   <h4>前端开发工程师</h4>
-  <span><time>2020年12月</time>~<time>2023年3月</time></span>
+  <span><time>2020年12月</time>~<time>2023年2月</time></span>
 </header>
 主要负责公司金融产品的前端研发工作；<br>
 参与前端组件库、常⽤⼯具的搭建，持续提⾼团队的⽣产效率；<br>
